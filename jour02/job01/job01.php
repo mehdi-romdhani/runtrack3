@@ -1,13 +1,13 @@
 <!-- Creation d'une page HTML  -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- LINK FOLDER JS  -->
-    <script src="job01.js"></script>
+    <script src="job01.js" defer></script>
     <title>Job01</title>
 </head>
 <body>
@@ -16,4 +16,4 @@
     </article>
     <button id="button" onclick="citation()">Click</button>
 </body>
-</html>
+</html>tu es allée au ski ?
