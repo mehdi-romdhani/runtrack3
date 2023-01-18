@@ -1,35 +1,32 @@
 //Se Declenche lorsque que le document HTML inital à étè completement chargé
 document.addEventListener("DOMContentLoaded", () => {
-    let foot = document.querySelector('footer');
-    let beginScroll = foot.scrollTop;
-    console.log(foot);
+  const body = document.querySelector("body");
+  const foot = document.querySelector("footer");
 
-        console.log(beginScroll);
+  // innerHeight est hauteur du viewport
 
-        //const navbar = document.querySelector('#nav')
+  //console.log(body);//debogage
 
-        window.addEventListener('scroll',()=>{
-            var scroll = window.pageYOffset;
-            if (scroll < 300) {
-                // green
-                foot.style.backgroundColor = 'green';
-            } else if (scroll >= 300 && scroll < 600) {
-                // yellow
-                foot.style.backgroundColor = 'yellow';
-            } else if (scroll >= 600 && scroll < 1200) {
-                // blue
-                foot.style.backgroundColor = 'blue';
-            } else if (scroll >= 1200 && scroll < 1800) {
-                // orange
-                foot.style.backgroundColor = 'orange';
-            } else if (scroll >= 1800 && scroll < 3000) {
-                // red
-                foot.style.backgroundColor = 'red';
-            } else {
-                // purple
-                foot.style.backgroundColor = 'brown';
-            }
-        })
+  //console.log(pourcentageScroll);//debogage
+
+  window.addEventListener("scroll", () => {
+    let hauteurBody = body.clientHeight; // on recupere la  valeur d'un element en javascript ici le body
+    let scrollParcours = window.scrollY; // on recupere la quantite de scroll parcours en px ;
+    let pourcentageScroll = scrollParcours % hauteurBody; // on recupere le pourcentage de scroll avec la division
+    let viewPortHauteur = window.innerHeight; // on recupere la  hauteur du viewport qui est la hauteur de ma page
+    let scroll = scrollParcours / (hauteurBody - viewPortHauteur);
+
     
+    let scrollPercent = Math.round(scroll * 100);//console.log(Math.round(scroll * 100)); // on arrondi la somme avec math.round
+
+    let pr = foot.style.width = scrollPercent + "%";
+    console.log(pr);
+
+    if(pr >= "45%" && pr <= "75%" ){
+        foot.style.backgroundColor="blue";
+    }else{
+        foot.style.backgroundColor="orange";
+    }
+
   });
-  
+});
