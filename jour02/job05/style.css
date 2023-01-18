@@ -1,0 +1,14 @@
+body{
+    width: 2048px; ;
+    height: 1152px ;
+    margin: 0;
+    padding: 0;
+}
+
+footer{
+    position: fixed;
+    text-align: center;
+    color : white;
+    background-color: brown;
+    width: 100vw ;
+}
